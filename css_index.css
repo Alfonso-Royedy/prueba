@@ -1,0 +1,261 @@
+/* Estilos generales para la página CBTIS */
+
+body {
+    background-color: #ffffff;
+    background-image: url(imagenes/backgrond/fondo.png); /* Fondo vistoso */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar-transparent {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Color de fondo con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para navegadores basados en WebKit */
+}
+
+.navbar-transparent .navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-transparent .navbar-nav .nav-link {
+    color: #ffffff; /* Color del texto */
+}
+
+.navbar-transparent .navbar-nav .nav-link:hover {
+    color: #cccccc; /* Color del texto al pasar el cursor */
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Ajuste para que la barra aparezca debajo del texto */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; /* Color de la barra */
+    transition: width 0.6s ease; /* Animación de transición */
+}
+
+.nav-item:hover::before {
+    width: 100%; /* Ancho completo al pasar el cursor */
+}
+
+h2 {
+    color: #0056b3; /* Color CBTIS */
+    text-align: center;
+}
+
+
+/* Estilos para los carruseles */
+
+/* Estilos para el carrusel de fotos */
+#photoCarousel.carousel {
+    width: 80%; /* Ancho del carrusel */
+    max-width: 1200px; /* Ancho máximo del carrusel */
+    margin: 0 auto;
+}
+
+#photoCarousel .carousel-item {
+    height: 0;
+    padding-top: 56.25%; /* Proporción 16:9 (9 / 16 * 100) */
+    position: relative;
+    overflow: hidden;
+}
+
+#photoCarousel .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 2.5s ease; /* Ajusta la duración y la función de temporización */
+}
+
+#photoCarousel .carousel-item.active img {
+    transform: scale(1.05); /* Efecto de escala al activar la imagen */
+}
+
+#photoCarousel .carousel-indicators li {
+    background-color: #ffffff; /* Color de los indicadores */
+}
+
+/* Estilos para el carrusel de avisos y convocatorias */
+#noticeCarousel {
+    width: 80%;
+    max-width: 1000px; /* Ancho máximo */
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    position: relative; /* Asegura que el contenido interno tenga posición relativa */
+}
+
+#noticeCarousel .carousel-inner .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px; /* Altura máxima de las imágenes */
+    border: 2px solid #f7f7a5; /* Borde beige alrededor de las imágenes */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    padding: 10px; /* Espaciado interno para crear margen */
+    background-color: #ffffff; /* Fondo blanco para que el borde sea visible */
+}
+
+#noticeCarousel .carousel-item {
+    text-align: center; /* Centrar contenido */
+}
+
+#noticeCarousel .carousel-indicators {
+    bottom: -30px; /* Ajuste de posición */
+    display: flex;
+    justify-content: center; /* Centrar indicadores */
+}
+
+#noticeCarousel .carousel-indicators li {
+    background-color: rgba(0, 0, 0, 0.5); /* Color semi-transparente para los indicadores */
+    border: 1px solid #ffffff; /* Borde blanco para los indicadores */
+}
+
+#noticeCarousel .carousel-indicators .active {
+    background-color: #ffffff; /* Color blanco para el indicador activo */
+    border-color: #000000; /* Borde negro para el indicador activo */
+}
+
+#noticeCarousel .carousel-control-prev,
+#noticeCarousel .carousel-control-next {
+    background-color: rgba(26, 110, 0, 0.5); /* Fondo semi-transparente para los controles */
+    border-radius: 50%; /* Bordes redondeados */
+    width: 30px; /* Ancho de los controles */
+    height: 30px; /* Altura de los controles */
+}
+
+#noticeCarousel .carousel-control-prev-icon,
+#noticeCarousel .carousel-control-next-icon {
+    filter: invert(100%); /* Iconos de control invertidos para mejor visibilidad */
+    width: 20px; /* Ancho del ícono */
+    height: 20px; /* Altura del ícono */
+}
+
+#noticeCarousel .carousel-control-prev {
+    left: -40px; /* Ajuste de posición izquierda */
+}
+
+#noticeCarousel .carousel-control-next {
+    right: -40px; /* Ajuste de posición derecha */
+}
+
+/* Contenedores con borde y fondo blanco */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Sección Carreras Técnicas */
+#carreras {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#carreras h2 {
+    color: #0056b3;
+}
+
+#carreras ul {
+    list-style-type: none;
+}
+
+#carreras ul li {
+    margin-bottom: 10px;
+}
+
+#carreras ul li a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#carreras ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sección Conócenos */
+#conocenos {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#conocenos h2 {
+    color: #0056b3;
+}
+
+#conocenos p {
+    color: #333333;
+}
+
+/* Mapa de Google */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#preloader img {
+    margin-bottom: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #0056b3;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
